@@ -13,12 +13,12 @@ Clear();
 WriteLine("введите длину массива: ");
 int M = int.Parse(ReadLine()!);
 int[] array = GetArray(M);
-int res=0;
+int res = 0;
 for (int i = 0; i < M; i++)
 {
-    if (array[i]>0)
+    if (array[i] > 0)
     {
-        res = res +1;
+        res++;
     }
 }
 WriteLine($"[{String.Join(", ", array)}]-> количество чисел больше 0 = {res}");
@@ -31,7 +31,7 @@ int[] GetArray(int size)
     int[] result = new int[size];
     for (int i = 0; i < result.Length; i++)
     {
-        WriteLine($"Введите {i+1} числo: ");
+        WriteLine($"Введите {i + 1} числo: ");
         int num = int.Parse(ReadLine()!);
         result[i] = num;
     }
@@ -39,3 +39,20 @@ int[] GetArray(int size)
 }
 
 
+//  Вариант без метода
+
+// using static System.Console;
+// Clear();
+// Write("Введите элементы через пробел: ");
+// int[] array = Array.ConvertAll(ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries), int.Parse);
+// int res = 0;
+
+// for (int i = 0; i < array.Length; i++)
+// {
+//     if (array[i] > 0)
+//     {
+//         res++;
+//     }
+// }
+
+// WriteLine($"[{String.Join(", ", array)}]-> количество чисел больше 0 = {res}");
